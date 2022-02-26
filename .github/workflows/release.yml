@@ -2,8 +2,8 @@ name: release
 
 on:
   push:
-    branches:
-      - 'feature/github_action_cache'
+    tags:
+      - '*'
 
 jobs:
   # create-release:
@@ -52,8 +52,6 @@ jobs:
             ~/.cargo
           key: ${{ runner.os }}-rust-${{ hashFiles('./frontend/rust-lib/Cargo.toml') }}
 
-
-      
 
   #     - name: Setup environment - Flutter
   #       uses: subosito/flutter-action@v2
