@@ -41,6 +41,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cargo
+            frontend/rust-lib/target
+          key: ${{ runner.os }}-rust-${{ hashFiles('./frontend/rust-lib/Cargo.toml') }}
+
       - name: Setup environment - Rust and Cargo
         uses: actions-rs/toolchain@v1
         with:
@@ -88,6 +95,13 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+      - uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cargo
+            frontend/rust-lib/target
+          key: ${{ runner.os }}-rust-${{ hashFiles('./frontend/rust-lib/Cargo.toml') }}
 
       - name: Setup environment - Rust and Cargo
         uses: actions-rs/toolchain@v1

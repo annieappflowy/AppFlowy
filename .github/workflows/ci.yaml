@@ -6,7 +6,7 @@ on:
     branches: [main]
 jobs:
   build-macos:
-    runs-on: macOS-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
