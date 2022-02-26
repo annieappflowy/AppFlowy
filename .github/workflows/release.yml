@@ -33,7 +33,7 @@ jobs:
 
   build-linux-x86:
     runs-on: ubuntu-latest
-    needs: create-release
+    # needs: create-release
     env:
       LINUX_APP_RELEASE_PATH: frontend/app_flowy/product/${{ github.ref_name }}/linux/Release
       LINUX_ZIP_NAME: AppFlowy-linux-x86.tar.gz
