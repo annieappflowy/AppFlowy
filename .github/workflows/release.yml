@@ -2,8 +2,8 @@ name: release
 
 on:
   push:
-    tags:
-      - '*'
+    branches:
+      - 'feature/github_action_cache'
 
 jobs:
   # create-release:
@@ -45,7 +45,7 @@ jobs:
         uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
-          
+
       - uses: actions/cache@v2
         with:
           path: |
